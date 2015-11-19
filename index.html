@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>Jeeslider</title>
+    <style>
+        .ui-slider{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .ui-slider>.slider-list{
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: box;
+            display: -webkit-box;
+            display: -moz-box;
+            box-orient:horizontal;
+            -webkit-box-orient:horizontal;
+            -webkit-box-pack:start;
+            -moz-box-pack:start;
+            -webkit-box-align:center;
+            -moz-box-align:center;
+        }
+        .ui-slider>.slider-list>.slider-list-item{
+            width:100%;
+        }
+        .ui-slider>.slider-nav{
+            position: absolute;
+            left: 50%;
+            bottom:.05rem;
+            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+        }
+        .ui-slider>.slider-nav>span{
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-right: 5px;
+            background: #FFF;
+            opacity: .4;
+            border-radius: 5px;
+        }
+        .ui-slider>.slider-nav>span.active{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+<!-- slider结构 -->
+<div class="ui-slider" id="slider">
+    <div class="slider-list animate">
+        <div class="slider-list-item">
+            <a href="javascript:;" id="play">
+                <img src="../imgs/new/ban.jpg" width="100%" alt="aaa"/>
+                <i class="icon-play"></i>
+            </a>
+        </div>
+        <div class="slider-list-item">
+            <a href="javascript:;">
+                <img src="../imgs/new/ban.jpg" width="100%" alt="bbb"/>
+            </a>
+        </div>
+        <div class="slider-list-item">
+            <a href="javascript:;">
+                <img src="../imgs/new/ban.jpg" width="100%" alt="ccc"/>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- slider结构 end -->
+</body>
+<!--需要引入seajs或requirejs zepto-->
+<script>
+    seajs.use('slider',function(Slider){
+        new Slider({
+            id:'slider'
+        })
+    })
+</script>
+</html>
